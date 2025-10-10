@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 11:55:08 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/10 09:43:27 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/10 10:39:12 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,3 +26,4 @@ char *ft_strrchr(const char *s, int c)
     
         return (NULL);
 }
+aaaaaaaaaaaaaa
