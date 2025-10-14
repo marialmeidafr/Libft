@@ -6,13 +6,13 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:15:06 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/13 11:20:07 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/14 14:06:56 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int isalpha(char c)
+int ft_isalpha(char c)
 {
     if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
         return (1);

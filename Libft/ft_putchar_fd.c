@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 15:20:41 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/14 14:07:46 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/14 10:13:50 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/14 11:04:00 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-int ft_isdigit(int c)
+void ft_putchar_fd(char c, int fd)
 {
-    if ((c >= 0 && c <= 9))
-        return (1);
-    return(0);
+    write(fd, &c, 1);
+}
+int	main(void)
+{
+	ft_putchar_fd('C', 0);
 }

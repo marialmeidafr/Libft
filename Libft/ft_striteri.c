@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 15:20:41 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/14 14:07:46 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/14 10:01:07 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/14 10:12:53 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-int ft_isdigit(int c)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-    if ((c >= 0 && c <= 9))
-        return (1);
-    return(0);
+    unsigned int i;
+
+    i = 0;
+    while(s[i])
+    {
+        f(i, &s[i]);
+        i++;
+    }
+}
+static void nextcharacter(unsigned int index, char	*c)
+{
+    (void)index;
+    *c += 1;
+ }
+
+#include <stdio.h>
+
+int	main (void)
+{
+	char str[] = "teste";
+    ft_striteri(str, nextcharacter);
+	printf("%s", str);
+	
+    return (0);
 }
