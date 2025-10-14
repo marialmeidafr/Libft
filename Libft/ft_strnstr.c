@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 14:46:08 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/10 10:09:56 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/10 15:50:10 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,32 @@ the first occurrence of little is returned.
 
 char *ft_strnstr(const char *big, const char *little, size_t len)
 {
-    int i;
+    size_t i;
+    size_t j;
 
     i = 0;
+    j = 0;
     if(*little == '\0')
-        return (big);
-    while(big[i])
+        return ((char *)big);
+    if (len == 0)
+		return (NULL);
+    while(big[i] != '\0' && i < len)
+    {
+        j = 0;
+        while (big[i + j] == little[j] && i + j < len && big[i + j] && little[j])
+            j++;
+        if(little[j] == '\0')
+            return ((char *)&big[i]);
         i++;
+    }
+    return (NULL);
+}
+#include <stdio.h>
+
+int	main()
+{
+	const char	c[] = "gabi maria thiago";
+	const char	d[] = "maria";
+
+	printf("%s\n", ft_strnstr(c, d, 17));
 }
