@@ -19,7 +19,7 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
     int i;
 
     i = 0;
-    str = malloc(len + 1);
+    str = ft_calloc(sizeof(char), len + 1);
     if (str == NULL)
         return (NULL);
     while (len >= 0 && s[start] != '\0')
@@ -29,9 +29,9 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
         i++;
         len--;
     }
-    str[i] = '\0';
     return (str);
 }
+/*
 int	main(void)
 {
     char	*str = "testar substr";
@@ -39,4 +39,4 @@ int	main(void)
     printf("substring: %s\n", result);    
     free(result);
     return 0;
-}
+}*/

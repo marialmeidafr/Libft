@@ -1,29 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 16:23:16 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:43:08 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/09 12:13:47 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/09 12:26:09 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(char const *str)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    int i;
+	unsigned int	i;
 
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (i < n && s1[i] != '\0' && s2[i] != '\0' && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }
-/*
-int main(void)
+#include <stdio.h>
+
+int	main(void)
 {
-    printf("%i\n", ft_strlen("hello"));
+	char s1[100] = "teste";
+	char s2[] = "teste";
+	int y = ft_strncmp(s1, s2, 5);
+	printf("%i\n", y);
 }
-*/

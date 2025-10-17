@@ -39,7 +39,7 @@ char *ft_strjoin(char const *s1, char const *s2)
     str[k] = '\0';
     return (str);
 }
-
+/*
 int	main(void)
 {
     char	*str1 = "para ";
@@ -48,4 +48,4 @@ int	main(void)
     printf("joined: %s\n", result);    
     free(result);
     return 0;
-}
+}*/

@@ -1,29 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 16:23:16 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:43:08 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/17 16:27:42 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/17 16:27:50 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(char const *str)
-{
-    int i;
-
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
-}
-/*
-int main(void)
-{
-    printf("%i\n", ft_strlen("hello"));
-}
-*/

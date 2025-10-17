@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:30:25 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 17:27:36 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/08 17:56:30 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,38 +25,37 @@ DESCRIPTION
 RETURN VALUE
        The memmove() function returns a pointer to dest.
 */
- #include <string.h>
+#include <string.h>
 
- void	*ft_memmove(void *dest, const void *src, size_t n)
- {
-    unsigned int	i;
-    char			*dst;
-    char			*source;
-    char			temp[n];
-    
-    i = 0;
-    dst = (char *)dest;
-    source = (char *)src;
-    while(i < n)
-    {
-        temp[i] = source[i];
-        dst[i] = temp[i];
-        i++;
-    }
-    return (dest);
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned int	i;
+	char			*dst;
+	char			*source;
+	char			temp[n];
+
+	i = 0;
+	dst = (char *)dest;
+	source = (char *)src;
+	while (i < n)
+	{
+		temp[i] = source[i];
+		dst[i] = temp[i];
+		i++;
+	}
+	return (dest);
 }
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int	main(void)
 {
 	char str[] = "lets test";
-	
+
 	ft_memmove(str, str + 5, 4);
 	printf("\nft_memmove with overlap:\n");
 	printf("dest = %s\n", str);
-
 
 	char src[] = "test";
 	char dest[5];
@@ -67,5 +66,5 @@ int main()
 	printf("src  = %s\n", src);
 	printf("dest = %s\n", dest);
 
-	return 0;
+	return (0);
 }

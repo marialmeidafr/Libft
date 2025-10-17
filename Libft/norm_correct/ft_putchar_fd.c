@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 16:23:16 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:43:08 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/14 10:13:50 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/14 11:04:00 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <unistd.h>
 
-size_t	ft_strlen(char const *str)
+void	ft_putchar_fd(char c, int fd)
 {
-    int i;
-
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
+	write(fd, &c, 1);
 }
-/*
-int main(void)
+int	main(void)
 {
-    printf("%i\n", ft_strlen("hello"));
+	ft_putchar_fd('C', 0);
 }
-*/

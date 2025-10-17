@@ -1,29 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 16:23:16 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:43:08 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/14 10:01:07 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/14 10:12:53 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-size_t	ft_strlen(char const *str)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    int i;
+	unsigned int	i;
 
-    i = 0;
-    while(str[i])
-        i++;
-    return (i);
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }
-/*
-int main(void)
+static void	nextcharacter(unsigned int index, char *c)
 {
-    printf("%i\n", ft_strlen("hello"));
+	(void)index;
+	*c += 1;
 }
-*/
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[] = "teste";
+	ft_striteri(str, nextcharacter);
+	printf("%s", str);
+
+	return (0);
+}

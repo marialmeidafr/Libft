@@ -2,9 +2,12 @@
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
+/*                                                    +:+ +:+        
+	+:+     */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+      
+	+#+        */
+/*                                                +#+#+#+#+#+  
+	+#+           */
 /*   Created: 2025/10/13 11:19:37 by mariaalm          #+#    #+#             */
 /*   Updated: 2025/10/13 11:19:37 by mariaalm         ###   ########.fr       */
 /*                                                                            */
@@ -12,10 +15,11 @@
 
 #include <stdlib.h>
 
+
 static int	ft_trimlen(char const *s1, char set)
 {
-	int	start;
-	int	end;
+	int start;
+	int end;
 
 	start = 0;
 	while (s1[start] == set)
@@ -33,10 +37,10 @@ static int	ft_trimlen(char const *s1, char set)
 
 char	*ft_strtrim(char const *s1, char set)
 {
-	int		start;
-	int		len;
-	int		i;
-	char	*str;
+	int start;
+	int len;
+	int i;
+	char *str;
 
 	if (s1 == NULL)
 		return (NULL);
@@ -56,7 +60,6 @@ char	*ft_strtrim(char const *s1, char set)
 	str[i] = '\0';
 	return (str);
 }
-/*
 int	main(void)
 {
 	char *res;
@@ -64,4 +67,4 @@ int	main(void)
 	res = ft_strtrim("eeefelipe de paula alveseee", 'e');
 	printf("'%s'\n", res);
 	free(res);
-}*/
+}

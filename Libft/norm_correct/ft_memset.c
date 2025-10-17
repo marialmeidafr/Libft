@@ -1,20 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/08 15:15:06 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:42:31 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/08 16:30:23 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/08 16:56:12 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//#include "libft.h"
 #include <stdlib.h>
 
-int ft_isalpha(int c)
+void	*ft_memset(void *s, int c, size_t n)
 {
-    if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-        return (1);
-    return(0);
+	unsigned int	i;
+	char			*string;
+
+	i = 0;
+	string = (char *)s;
+	while (i < n)
+	{
+		string[i] = (char)c;
+		i++;
+	}
+	return (s);
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char str[20];
+
+	ft_memset(str, 'A', 19);
+	str[19] = '\0';
+
+	printf("result of ft_memset: %s\n", str);
+
+	ft_memset(str, 'c', 5);
+	printf("result after ft_memset: %s\n", str);
+
+	return (0);
 }
