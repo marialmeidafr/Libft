@@ -3,47 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:58:03 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/10 09:50:33 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 12:43:58 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*The strlcpy() copy  strings 
-    strlcpy()  take the full size of the buffer (not just the length) and guarantee
-    to NUL-terminate the result (as long as size is larger
-    than 0. 
-    Note that a byte for the NUL should be included in size.
-    for strlcpy() src must be NUL-terminated
-    The strlcpy() function copies up to size - 1 characters from the NUL-termi‐
-    nated string src to dst, NUL-terminating the result.
-    strlcpy() that means the length of src
+strlcpy()  take the full size of the buffer (not just the length) and guarantee
+to NUL-terminate the result (as long as size is larger
+than 0. 
+Note that a byte for the NUL should be included in size.
+for strlcpy() src must be NUL-terminated
+The strlcpy() function copies up to size - 1 characters from the NUL-termi‐
+nated string src to dst, NUL-terminating the result.
+strlcpy() that means the length of src
 */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t ft_strlcpy(char *dst, const char *src, size_t size)
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-    unsigned int i;
-    int length;
+	unsigned int	i;
+	int				length;
 
-    i = 0;
-    length = 0;
-    while(src[length])
-    {
-        length++;
-    }
-    if(size == 0)
-        return (length);
-    while(src[i] != '\0' && i < (size - 1))
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = '\0';
-    return (length);
+	i = 0;
+	length = 0;
+	while (src[length])
+	{
+		length++;
+	}
+	if (size == 0)
+		return (length);
+	while (src[i] != '\0' && i < (size - 1))
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (length);
 }
+/*
 #include <stdio.h>
  
 int main() {
@@ -59,3 +60,4 @@ int main() {
 
     return 0;
 }
+*/

@@ -3,49 +3,42 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:30:25 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 17:27:36 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:47:14 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*SYNOPSIS
-       #include <string.h>
-
-       void *memmove(void *dest, const void *src, size_t n);
-
-DESCRIPTION
-       The  memmove()  function  copies n bytes from memory area src to memory
-       area dest.  The memory areas may overlap: copying takes place as though
-       the  bytes in src are first copied into a temporary array that does not
-       overlap src or dest, and the bytes are then copied from  the  temporary
-       array to dest.
-
-RETURN VALUE
-       The memmove() function returns a pointer to dest.
+/* void *memmove(void *dest, const void *src, size_t n);
+The  memmove()  function  copies n bytes from memory area src to memory
+area dest.  The memory areas may overlap: copying takes place as though
+the  bytes in src are first copied into a temporary array that does not
+overlap src or dest, and the bytes are then copied from  the  temporary
+array to dest.
+The memmove() function returns a pointer to dest.
 */
- #include <string.h>
+#include "libft.h"
 
- void	*ft_memmove(void *dest, const void *src, size_t n)
- {
-    unsigned int	i;
-    char			*dst;
-    char			*source;
-    char			temp[n];
-    
-    i = 0;
-    dst = (char *)dest;
-    source = (char *)src;
-    while(i < n)
-    {
-        temp[i] = source[i];
-        dst[i] = temp[i];
-        i++;
-    }
-    return (dest);
+void	*ft_memmove(void *dest, const void *src, size_t n)
+{
+	unsigned char	*sdest;
+	unsigned char	*ssrc;
+	size_t			i;
+
+	i = 0;
+	sdest = (unsigned char *) dest;
+	ssrc = (unsigned char *) src;
+	if (sdest > ssrc)
+	{
+		while (i++ < n)
+			sdest[n - i] = ssrc[n - i];
+	}
+	else
+		ft_memcpy(dest, src, n);
+	return (dest);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -69,3 +62,4 @@ int main()
 
 	return 0;
 }
+*/

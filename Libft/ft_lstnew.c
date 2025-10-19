@@ -3,27 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/15 12:49:25 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 16:19:17 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:33:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content)
 {
-    t_list *newnode;
+	t_list	*newnode;
 
-    newnode = malloc(sizeof(t_list));
-    if(newnode == NULL)
-        return(NULL);
-    newnode->content = content;
-    newnode->next = NULL;
-    return (newnode);
+	newnode = malloc(sizeof(t_list));
+	if (newnode == NULL)
+		return (NULL);
+	newnode->content = content;
+	newnode->next = NULL;
+	return (newnode);
 }
-
+/*
 int	main(void)
 {
 	char	*str = ft_strdup("teste");
@@ -42,3 +42,4 @@ int	main(void)
 	free(node);
 	return (0);
 }
+*/

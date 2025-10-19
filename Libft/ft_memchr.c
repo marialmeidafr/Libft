@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:26:07 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/09 14:45:19 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:37:10 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,26 @@ byte or NULL if the character does not  occur  in  the  given  memory
 area.
 */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void *ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-    unsigned char   i;
-    unsigned char *str;
-    unsigned char k;
+	unsigned char	i;
+	unsigned char	*str;
+	unsigned char	k;
 
-    i = 0;
-    str = (unsigned char *)s;
-    k = (unsigned char)c;
-    while(i < n)
-    {
-        if(str[i] == k)
-            return (&str[i]);
-        i++;        
-    }
-    return (NULL);
+	i = 0;
+	str = (unsigned char *)s;
+	k = (unsigned char)c;
+	while (i < n)
+	{
+		if (str[i] == k)
+			return (&str[i]);
+		i++;
+	}
+	return (NULL);
 }
+/*
 #include <stdio.h>
 
 int main(void)
@@ -54,3 +55,4 @@ int main(void)
 
     return (0);
 }
+*/

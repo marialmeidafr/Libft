@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:16:56 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 17:11:41 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 22:41:36 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,25 +24,25 @@ RETURN VALUE
        The memcpy() function returns a pointer to dest.
 */
 
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    unsigned int i;
-    char *dst;
-    char *source;
-    
-    i = 0;
-    dst = (char *)dest;
-    source = (char *)src;
-    if (dest == src)
-	    return (dest);
-    while(i < n)
-    {
-        dst[i] = source[i];
-        i++;
-    }
-    return (dest);
+	unsigned int	i;
+	char			*dst;
+	char			*source;
+
+	i = 0;
+	dst = (char *)dest;
+	source = (char *)src;
+	if (dest == src)
+		return (dest);
+	while (i < n)
+	{
+		dst[i] = source[i];
+		i++;
+	}
+	return (dest);
 }
 /*
 #include <stdio.h>

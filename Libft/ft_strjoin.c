@@ -10,34 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-    int i;
-    int k;
-    int count;
-    char *str;
+	int		i;
+	int		k;
+	int		count;
+	char	*str;
 
-    i = 0;
-    k = 0;
-    count = 0;
-    while(s1[i++])
-        count++;
-    i = 0;
-    while(s2[i++])
-        count++;
-    str = malloc(count + 1);
-    if (str == NULL)
-        return (NULL);
-    i = 0;
-    while(s1[i])
-        str[k++] = s1[i++];
-    i = 0;
-    while(s2[i])
-        str[k++] = s2[i++];
-    str[k] = '\0';
-    return (str);
+	i = 0;
+	k = 0;
+	count = 0;
+	while (s1[i++])
+		count++;
+	i = 0;
+	while (s2[i++])
+		count++;
+	str = malloc(count + 1);
+	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (s1[i])
+		str[k++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		str[k++] = s2[i++];
+	str[k] = '\0';
+	return (str);
 }
 /*
 int	main(void)

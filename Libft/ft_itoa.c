@@ -3,18 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 12:59:34 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/13 14:57:09 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/18 20:22:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*ft_itoa does something conceptually similar to ft_putnbr (turns numbers into characters),
-but instead of printing, it creates and returns a string with memory allocation.
-*/
-
-#include <stdlib.h>
+#include "libft.h"
 
 static unsigned int	numlength(int nb)
 {
@@ -22,7 +18,7 @@ static unsigned int	numlength(int nb)
 
 	len = 0;
 	if (nb <= 0)
-        len++;
+		len++;
 	while (nb != 0)
 	{
 		nb = nb / 10;
@@ -34,7 +30,7 @@ static unsigned int	numlength(int nb)
 char	*ft_itoa(int n)
 {
 	unsigned int	length;
-    long			num;
+	long			num;
 	char			*result;
 
 	num = n;
@@ -58,11 +54,11 @@ char	*ft_itoa(int n)
 	}
 	return (result);
 }
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() 
+int main(void) 
 {
     char *result;
 
@@ -84,3 +80,4 @@ int main()
 
     return (0);
 }
+*/

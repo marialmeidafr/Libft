@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:20:23 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/09 11:54:51 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 11:56:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,21 @@ null byte is considered part of the string, so that if c is specified
 as '\0', these functions return a pointer to the terminator.
 */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    int j = (char)c;
-  
-    while(*s != '\0' && *s != j)
-        s++; //incrementa o ponteiro para retornar um ponteiro
-    if(*s == j)
-        return ((char *)s);
-    else
-        return (NULL);
+	int	j;
+
+	j = (char)c;
+	while (*s != '\0' && *s != j)
+		s++;
+	if (*s == j)
+		return ((char *)s);
+	else
+		return (NULL);
 }
+/*
 #include <stdio.h>
 int main(void) 
 {
@@ -45,3 +47,4 @@ int main(void)
         printf("character '%c' not found in the string.\n", point);
     return 0;
 }
+*/

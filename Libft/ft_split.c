@@ -3,100 +3,102 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:27:42 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/17 17:25:14 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/19 20:38:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft.h"
+#include "libft.h"
 
-static size_t	ft_first_not_of(char const *s, char c)
+static char **ft_free(char **strs, size_t words)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while (s[i])
+	while(i < words)
 	{
-		if (s[i] != c)
-			break ;
+		free(strs[i]);
 		i++;
 	}
-	return (i);
-}
-
-static size_t	ft_countlen(char const *s, char c)
-{
-	size_t	count;
-	size_t	i;
-
-	count = 0;
-	i = 0;
-	while (s[i])
-	{
-		while (s[i] && s[i] == c)
-			i++;
-		if (s[i] && s[i] != c)
-			count++;
-		while (s[i] && s[i] != c)
-			i++;
-	}
-	return (count);
-}
-
-static size_t	ft_seglen(char const *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			break ;
-		i++;
-	}
-	return (i);
-}
-
-static char	**ft_free_array(char **array, size_t j)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < j)
-	{
-		free(array[i]);
-		i++;
-	}
-	free(array);
+	free(strs);
 	return (NULL);
 }
-
-char	**ft_split(char const *s, char c)
+static size_t count_words(char const *s, char c)
 {
-	size_t	count;
-	size_t	j;
-	char	**array;
-	size_t	i;
+	size_t i;
+	size_t j;
+	size_t count;
 
-	count = ft_countlen(s, c);
-	array = ft_calloc(sizeof(char *), (count + 1));
-	if (!array)
-		return (NULL);
 	i = 0;
 	j = 0;
-	while (j < count)
+	count = 0;
+
+	while(s[i])
 	{
-		i += ft_first_not_of(&s[i], c);
-		array[j] = ft_calloc(sizeof(char), ft_seglen(&s[i], c) + 1);
-		if (!array[j])
-			return (ft_free_array(array, j));
-		ft_memcpy(array[j], &s[i], ft_seglen(&s[i], c));
-		i += ft_seglen(&s[i], c);
-		j++;
+		if(s[i] != c && j == 0)
+		{
+			j = 1;
+			count++;
+		}
+		else if(s[i] == c)
+			j = 0;
+		i++;
 	}
-	return (array);
+	return(count);
+}
+static size_t ft_seglen(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while(s[i] && s[i] != c)
+		i++;
+	return (i);
+}
+static char **fill_array(char **strs, char const *s, char c, size_t words)
+{
+	size_t i;
+	size_t j;
+	size_t seg;
+
+	i = 0;
+	seg = 0;
+	while (seg < words)
+	{
+		j = 0;
+		while (s[i] && s[i] == c)
+			i++;
+		strs[seg] = malloc(ft_seglen(&s[i], c) + 1);
+		if (strs[seg] == NULL)
+			return(ft_free(strs, seg));
+		while (s[i] && s[i] != c)
+		{
+			strs[seg][j] = s[i];
+			i++;
+			j++;
+		}
+		strs[seg][j] = '\0';
+		seg++;
+	}
+	return (strs);
+}
+char **ft_split(char const *s, char c)
+{
+	char **result;
+	size_t strings;
+
+	if(s == NULL)
+		return(NULL);
+	strings = count_words(s, c);
+	result = malloc(sizeof(char *) * (strings + 1));
+	if(result == NULL)
+		return(NULL);
+	result[strings] = NULL;
+	if (strings > 0)
+		result = fill_array(result, s, c, strings);
+	return (result);
 }
 
 int	main(int ac, char **av)
@@ -115,6 +117,5 @@ int	main(int ac, char **av)
 			}
 			free(array);
 		}
-
 	}
 }
