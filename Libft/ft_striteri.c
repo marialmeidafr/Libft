@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:01:07 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/19 12:37:57 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/20 13:55:31 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-
+/*
 static void	nextcharacter(unsigned int index, char	*c)
 {
 	(void)index;
 	*c += 1;
 }
-/*
+
 #include <stdio.h>
 
 int	main (void)

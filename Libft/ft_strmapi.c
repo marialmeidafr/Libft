@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/13 14:59:44 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/19 12:47:47 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/20 13:55:15 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str[i] = '\0';
 	return (str);
 }
-
+/*
 static char	nextcharacter(unsigned int index, char c)
 {
 	(void)index;
 	return (c + 1);
 }
-/*
+
 #include <stdio.h>
 
 int	main (void)

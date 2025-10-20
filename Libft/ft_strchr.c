@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 10:20:23 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/19 11:56:21 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/20 11:09:31 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,11 @@ int main(void)
     char *result = ft_strchr(str, point);
 
     if (result != NULL) 
-        printf("character '%c' found in the string.\n", point);
-    else 
+	{
+        printf("Character '%c' found in the string.\n", point);
+		printf("Memmory address: %p\n", result);
+	}
+	else 
         printf("character '%c' not found in the string.\n", point);
     return 0;
 }

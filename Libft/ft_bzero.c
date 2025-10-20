@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:01:54 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/18 20:08:54 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/20 09:10:07 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
 /*The character '\0' in C literally represents the value zero (0) as a byte.
 The ft_bzero function is meant to fill a block of memory with zeros,
 	effectively clearing it.*/
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
@@ -31,7 +30,6 @@ void	ft_bzero(void *s, size_t n)
 	}
 }
 /*
-#include <stddef.h>
 #include <stdio.h>
 
 int	main(void)

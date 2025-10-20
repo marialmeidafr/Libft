@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 16:23:16 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/19 12:44:27 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/20 11:25:31 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])
@@ -24,6 +24,6 @@ size_t	ft_strlen(char const *str)
 /*
 int main(void)
 {
-    printf("%i\n", ft_strlen("hello"));
+    printf("%zu\n", ft_strlen("hello"));
 }
 */

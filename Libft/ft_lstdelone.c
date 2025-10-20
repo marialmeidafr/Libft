@@ -1,48 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/14 11:15:43 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 13:56:11 by mariaalm         ###   ########.fr       */
+/*   Created: 2025/10/20 11:45:57 by mariaalm          #+#    #+#             */
+/*   Updated: 2025/10/20 14:13:54 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-static void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
-*/
-void	ft_putnbr_fd(int n, int fd)
-{
-	unsigned int	nb;
 
-	if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		nb = -n;
-	}
-	else
-		nb = n;
-	if (nb < 10)
-		ft_putchar_fd(nb + '0', fd);
-	else
-	{
-		ft_putnbr_fd(nb / 10, fd);
-		ft_putchar_fd(nb % 10 + '0', fd);
-	}
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	(*del)(lst -> content);
+	free (lst);
 }
 /*
-#include <stdio.h>
-
-int main(void) 
+int	main(void)
 {
-	int fd = 1;
-	ft_putnbr_fd(-2147483648, fd);
-	return 0;
+	t_list *a = malloc(sizeof(t_list));
+	t_list *b = malloc(sizeof(t_list));
+
+	if (!a || !b)
+		return (1);
+
+	a->content = strdup("primeiro");
+	b->content = strdup("segundo");
+
+	a->next = b;
+	b->next = NULL;
+
+	ft_lstdelone(a, free);
+	
+	printf("%s\n", (char *)b->content);
+
+	free(b->content);
+	free(b);
+	return (0);
 }
 */

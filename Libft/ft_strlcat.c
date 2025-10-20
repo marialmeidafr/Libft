@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:17:20 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/08 18:47:07 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/20 14:08:14 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,34 +30,35 @@
     problems in incorrect code.
 */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-    unsigned int i;
-    unsigned int j;
-    unsigned int lenght;
+	size_t	i;
+	size_t	j;
+	size_t	lenght;
 
-    i = 0;
-    j = 0;
-    lenght = 0;
-    while(dst[i])
-        i++;
-    while(src[lenght])
-        lenght++;
-    if (size <= i)
+	i = 0;
+	j = 0;
+	lenght = 0;
+	while (dst[i])
+		i++;
+	while (src[lenght])
+		lenght++;
+	if (size <= i)
 		lenght += size;
 	else
 		lenght += i;
-    while(src[j] != '\0' && (i + 1) < size)
-    {
-        dst[i] = src[j];
-        i++;
-        j++;
-    }
-    dst[i] = '\0';
-    return (lenght);
+	while (src[j] != '\0' && (i + 1) < size)
+	{
+		dst[i] = src[j];
+		i++;
+		j++;
+	}
+	dst[i] = '\0';
+	return (lenght);
 }
+/*
 #include<stdio.h>
 int	main(void)
 {
@@ -70,3 +71,4 @@ int	main(void)
 
 	return (0);
 }
+*/
