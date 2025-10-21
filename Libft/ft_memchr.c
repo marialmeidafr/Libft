@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 13:26:07 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/18 22:37:10 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/21 12:15:51 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,16 @@ void	*ft_memchr(const void *s, int c, size_t n)
 int main(void)
 {
     const char str[] = "test";
-    char ch = 'i';
-    size_t len = 14;
+    char ch = 'e';
+    size_t len = ft_strlen(str);
 
     char *result = (char *)ft_memchr(str, ch, len);
 
     if (result != NULL)
+	{
         printf("char '%c' found\n", ch);
+		printf("memmory address: %p\n", result);
+	}
     else
         printf("char '%c' not found\n", ch);
 

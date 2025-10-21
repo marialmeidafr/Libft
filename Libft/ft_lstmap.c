@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 14:20:37 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 16:01:18 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/21 09:34:21 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*list_start;
 	void	*content;
 
-	list_start = ft_mklst(lst, f, del);
+	list_start = ft_makelist(lst, f, del);
 	if (!list_start)
 		return (NULL);
 	n_list = list_start;

@@ -40,6 +40,7 @@ FILES = ft_isalpha.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strtrim.c \
+	ft_split.c \
 	ft_itoa.c \
 	ft_strmapi.c \
 	ft_striteri.c \
@@ -49,9 +50,19 @@ FILES = ft_isalpha.c \
 	ft_putnbr_fd.c \
 	ft_strdup.c \
 	ft_calloc.c
-# ft_split.c
+
+BONUS_FILES = ft_lstnew.c \
+		ft_lstadd_front.c \
+		ft_lstsize.c \
+		ft_lstlast.c \
+		ft_lstadd_back.c \
+	    ft_lstdelone.c \
+		ft_lstclear.c \
+		ft_lstiter.c \
+		ft_lstmap.c
 
 OBJS = $(FILES:.c=.o)
+BONUS_OBJS = $(BONUS_FILES:.c=.o)
 
 # ----------------------------- #
 #            RULES              #
@@ -66,10 +77,13 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(BONUS_OBJS) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
+
+bonus: $(BONUS_OBJS) $(OBJS)
+	$(AR) $(NAME) $(BONUS_OBJS) $(OBJS)
 
 re: fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/09 12:27:13 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/18 22:39:52 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/21 12:18:02 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,7 @@ unsigned char) of the memory areas s1 and s2.
 The memcmp() function returns an integer  less  than,  equal  to,  or
 greater  than zero if the first n bytes of s1 is found, respectively,
 to be less than, to match, or be greater than the first  n  bytes  of s2.
-
-For a nonzero return value, the sign is determined by the sign of the
-difference between the first pair of bytes (interpreted  as  unsigned
-char) that differ in s1 and s2.
-
-If n is zero, the return value is zero.*/
+*/
 
 #include "libft.h"
 
@@ -47,6 +42,6 @@ int	main()
 {
 	const void *s = "ac";
 	const void *d = "abc";
-	printf("%d\n", ft_memcmp(s, d, 2));
+	printf("%d\n", ft_memcmp(s, d, 0));
 }
 */

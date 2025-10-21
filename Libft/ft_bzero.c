@@ -6,13 +6,13 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 17:01:54 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 09:10:07 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/21 11:36:18 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*The character '\0' in C literally represents the value zero (0) as a byte.
+/*
 The ft_bzero function is meant to fill a block of memory with zeros,
-	effectively clearing it.*/
+effectively clearing it.*/
 
 #include "libft.h"
 

@@ -6,17 +6,12 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 11:15:43 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 13:56:11 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/21 12:27:03 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/*
-static void	ft_putchar_fd(char c, int fd)
-{
-	write (fd, &c, 1);
-}
-*/
+
 void	ft_putnbr_fd(int n, int fd)
 {
 	unsigned int	nb;
@@ -41,8 +36,7 @@ void	ft_putnbr_fd(int n, int fd)
 
 int main(void) 
 {
-	int fd = 1;
-	ft_putnbr_fd(-2147483648, fd);
+	ft_putnbr_fd(-2147483648, 1);
 	return 0;
 }
 */

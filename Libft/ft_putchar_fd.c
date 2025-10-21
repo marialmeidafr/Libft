@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 10:13:50 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/19 11:47:32 by marvin           ###   ########.fr       */
+/*   Updated: 2025/10/21 12:26:07 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,6 @@ void	ft_putchar_fd(char c, int fd)
 /*
 int	main(void)
 {
-	ft_putchar_fd('C', 0);
+	ft_putchar_fd('C', 1);
 }
 */

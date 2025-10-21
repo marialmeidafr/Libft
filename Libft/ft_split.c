@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 16:27:42 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 14:05:53 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/21 09:09:21 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	**ft_split(char const *s, char c)
 /*
 int	main(int ac, char **av)
 {
-	if (ac >= 3)
+	if (ac == 3)
 	{
 		char	**array = ft_split(av[1], av[2][0]);
 		int	i = 0;

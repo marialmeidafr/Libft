@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 13:39:11 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 14:19:34 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/21 10:10:33 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	f(lst->content);
-	lst = lst->next;
+	while (lst)
+	{
+		f(lst->content);
+		lst = lst->next;
+	}
 }

@@ -12,23 +12,44 @@
 
 #include "libft.h"
 
+static size_t	ft_totlen(size_t str_len, size_t start, size_t len)
+{
+	size_t	total;
+
+	if (start + len > str_len)
+		total = str_len - start;
+	else if (str_len < len)
+		total = str_len;
+	else
+		total = len;
+	return (total + 1);
+}
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char	*str;
-	int		i;
+	size_t	i;
+	size_t	str_len;
+	char	*sub_str;
 
-	i = 0;
-	str = ft_calloc(sizeof(char), len + 1);
-	if (str == NULL)
+	str_len = ft_strlen(s);
+	if (s == NULL)
 		return (NULL);
-	while (len >= 0 && s[start] != '\0')
+	if (start > str_len)
 	{
-		str[i] = s[start];
-		start++;
-		i++;
-		len--;
+		start = 0;
+		len = 0;
 	}
-	return (str);
+	sub_str = (char *) malloc(sizeof(char) * (ft_totlen(str_len, start, len)));
+	if (sub_str == NULL)
+		return (NULL);
+	i = 0;
+	while (s[start + i] != '\0' && i < len)
+	{
+		sub_str[i] = s[start + i];
+		i++;
+	}
+	sub_str[i] = '\0';
+	return (sub_str);
 }
 /*
 int	main(void)
