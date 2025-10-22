@@ -6,7 +6,7 @@
 /*   By: mariaalm <mariaalm@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 18:17:20 by mariaalm          #+#    #+#             */
-/*   Updated: 2025/10/20 14:08:14 by mariaalm         ###   ########.fr       */
+/*   Updated: 2025/10/22 09:11:24 by mariaalm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,26 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	dst_len;
+	size_t	src_len;
 	size_t	i;
-	size_t	j;
-	size_t	lenght;
 
+	dst_len = 0;
+	src_len = 0;
+	while (dst[dst_len] && dst_len < size)
+		dst_len++;
+	while (src[src_len])
+		src_len++;
+	if (dst_len == size)
+		return (size + src_len);
 	i = 0;
-	j = 0;
-	lenght = 0;
-	while (dst[i])
-		i++;
-	while (src[lenght])
-		lenght++;
-	if (size <= i)
-		lenght += size;
-	else
-		lenght += i;
-	while (src[j] != '\0' && (i + 1) < size)
+	while (src[i] && (dst_len + i + 1) < size)
 	{
-		dst[i] = src[j];
+		dst[dst_len + i] = src[i];
 		i++;
-		j++;
 	}
-	dst[i] = '\0';
-	return (lenght);
+	dst[dst_len + i] = '\0';
+	return (dst_len + src_len);
 }
 /*
 #include<stdio.h>
