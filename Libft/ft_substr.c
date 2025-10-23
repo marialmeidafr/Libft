@@ -54,7 +54,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 /*
 int	main(void)
 {
-    char	*str = "testar substr";
+    char	*str = "tetsar substr";
     char	*result = ft_substr(str, 2, 2);
     printf("substring: %s\n", result);    
     free(result);

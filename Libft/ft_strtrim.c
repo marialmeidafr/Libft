@@ -34,7 +34,8 @@ int	main(void)
 {
 	char *res;
 
-	res = ft_strtrim("eeefelipe de paula alveseee", 'e');
+	res = ft_strtrim("e", "e");
 	printf("'%s'\n", res);
 	free(res);
-}*/
+}
+*/
